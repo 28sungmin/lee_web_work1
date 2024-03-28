@@ -13,7 +13,7 @@ body {
   margin: 0;
   padding: 0;
   /* background-color: rgba(182, 218, 250, 0.5); */
-  font-family: "Ownglyph_Dailyokja-Rg";
+  /* font-family: "Ownglyph_Dailyokja-Rg"; */
 }
 h1,
 h2,
@@ -37,12 +37,13 @@ a {
 
 /* header */
 .lee_title {
+  font-family: "Ownglyph_Dailyokja-Rg";
   height: 80px;
   /* background-color: rgba(63, 165, 255, 0.5); */
 
   display: flex;
   justify-content: center;
-  border-bottom: 1px solid #666;
+  border-bottom: 1px solid #e5e5e5;
 }
 .lee_title .wrap {
   width: 65%;
@@ -50,6 +51,7 @@ a {
   display: flex;
   justify-content: start;
   align-items: center;
+  /* background-color: red; */
 }
 
 .lee_title .wrap .logo {
@@ -59,26 +61,87 @@ a {
 .lee_title .wrap .logo a img {
   height: 60px;
 }
-
-.lee_title .wrap .menu {
-  margin-left: 40px;
-  /* font-family: "Ownglyph_Dailyokja-Rg"; */
-  font-size: 1.3em;
-}
-.lee_title .wrap .menu > ul {
+.lee_title .search_box {
   display: flex;
+  margin: 0 auto;
+  height: 30px;
+  width: 60%;
+  /* background-color: blue; */
+  justify-content: center;
 }
-.lee_title .wrap .menu > ul > li {
-  margin: 0 20px;
-}
-
-.lee_title .search {
-  display: flex;
-  justify-content: start;
-  align-items: center;
-}
-.lee_title .search img {
+.lee_title .search_box .search img {
   width: 30px;
+  margin-right: 10px;
+}
+.lee_title .search_box input {
+  width: 300px;
+  border: 1px solid #000;
+  background-color: transparent;
+  border-radius: 30px;
+}
+
+/* 햄버거 아이콘 설정 */
+.lee_title .wrap .menu_icon {
+  position: fixed;
+  top: 15px;
+  right: 25px;
+}
+.lee_title .wrap .menu_icon button {
+  border: none;
+  background-color: transparent;
+  font-size: 40px;
+  cursor: pointer;
+}
+.lee_title .wrap .menu {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translateX(100%);
+}
+.lee_title .wrap .menu.active {
+  transform: translateX(0%);
+  transition: transform 0.5s;
+  z-index: 2;
+}
+.lee_title .wrap .menu .close {
+  position: absolute;
+  top: 10px;
+  font-size: 30px;
+  transform: rotate(45deg);
+  color: #bbb;
+  cursor: pointer;
+}
+.lee_title .wrap .menu .close:hover {
+  color: #fff;
+}
+.lee_title .wrap .menu ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  gap: 30px;
+}
+.lee_title .wrap .menu ul li {
+  text-align: center;
+  font-size: 20px;
+}
+.lee_title .wrap .menu ul li a {
+  color: #bbb;
+  opacity: 0;
+}
+.lee_title .wrap .menu ul li a:hover {
+  color: #fff;
+}
+.lee_title .wrap .menu.active ul li a {
+  opacity: 1;
+  transition: opacity 1.5s;
+  transition-delay: calc(0.5s * var(--i));
 }
 
 /* section */
@@ -118,8 +181,9 @@ a {
 
 /* intro */
 #intro {
+  font-family: "Ownglyph_Dailyokja-Rg";
   padding-bottom: 50px;
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid #e5e5e5;
 }
 #intro .word {
   margin-top: 50px;
@@ -144,7 +208,7 @@ a {
 #intro .family_btn {
   text-align: center;
 }
-#intro .family_btn button {
+#intro .family_btn a {
   font-family: "Ownglyph_Dailyokja-Rg";
   border: 2px solid #000;
   background-color: transparent;
@@ -152,25 +216,24 @@ a {
   padding: 10px;
   border-radius: 20px;
   font-size: 1.5em;
+  transition: 0.5s;
 }
-#intro .family_btn button:hover {
+#intro .family_btn a:hover {
   background-color: #999;
-}
-#intro .family_btn button:hover a {
   color: #fff;
 }
-
 /* mode 관련 */
 #mode {
+  font-family: "Ownglyph_Dailyokja-Rg";
   width: 80%;
-  margin: 20px auto 0;
+  margin: 20px auto 50px;
   /* border: 2px dashed blue; */
 }
 #mode .young {
   position: relative;
   background-color: #f3eeea;
   border-radius: 10px;
-  padding: 20px 0;
+  padding: 23px 0;
   margin-right: 5px;
 }
 #mode .young:hover {
@@ -213,23 +276,22 @@ a {
 #mode .young ul li:nth-child(1) {
   border-right: 0;
 }
-
-#mode .young button {
+#mode .young a {
+  font-family: arial;
   position: absolute;
   top: 10px;
   right: 20px;
   border: none;
   background-color: #000;
-  cursor: pointer;
+  color: #fff;
+  font-size: 20px;
+  padding: 2px 7px;
 }
-#mode .young button:hover {
+#mode .young a:hover {
   background-color: red;
   transition: 0.3s;
 }
-#mode .young button a {
-  color: #fff;
-  font-size: 20px;
-}
+
 #mode .now {
   width: 100%;
   margin-left: 20px;
@@ -238,9 +300,14 @@ a {
   border-radius: 10px;
   text-align: center;
   padding: 34px 0;
+  background-image: url(../img/now_img.png);
+  background-repeat: no-repeat;
+  background-position: right -90px top -155px;
 }
 #mode .now:hover {
   background-color: #f0cba3;
+  background-position: right -35px top -175px;
+  transition: 1s;
 }
 #mode .now h4 {
   font-size: 2.5em;
@@ -250,30 +317,53 @@ a {
   font-size: 1.2em;
   text-align: center;
 }
-#mode .now button {
+#mode .now a {
   font-family: "Ownglyph_Dailyokja-Rg";
+  display: inline-block;
   width: 300px;
   margin-top: 20px;
   border: 1px solid #bb9162;
   padding: 10px;
   background-color: transparent;
+  font-size: 1.2em;
   cursor: pointer;
 }
-#mode .now button:hover {
+#mode .now a:hover {
   background-color: #ad9071;
   transition: 0.5s;
-}
-#mode .now button:hover a {
   color: #fff;
 }
-#mode .now button a {
-  font-size: 1.2em;
-  float: left;
-}
-#mode .now button a::after {
+#mode .now a::after {
   content: "＞";
   margin-left: 180px;
   font-weight: 1000;
+}
+
+/* footer 관련 */
+#footer {
+  font-family: "Ownglyph_Dailyokja-Rg";
+  color: #fff;
+  background-color: #333;
+  height: 200px;
+}
+#footer .address {
+  margin: 0 auto;
+  width: 80%;
+  padding: 20px 0;
+  border-bottom: 1px solid #424242;
+}
+#footer .link {
+  width: 80%;
+  padding-top: 20px;
+  margin: 0 auto;
+}
+#footer .link a {
+  display: flex;
+  justify-content: flex-end;
+  color: #fff;
+}
+#footer .link a p {
+  margin-left: 10px;
 }
 /* 미디어 쿼리 */
 @media all and (min-width: 320px) {

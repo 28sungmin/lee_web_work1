@@ -1,0 +1,172 @@
+@charset "utf-8";
+
+@font-face {
+  font-family: "Ownglyph_Dailyokja-Rg";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/2403@1.0/Ownglyph_Dailyokja-Rg.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  /* background-color: rgba(182, 218, 250, 0.5); */
+  /* font-family: "Ownglyph_Dailyokja-Rg"; */
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+/* header */
+.lee_title {
+  font-family: "Ownglyph_Dailyokja-Rg";
+  height: 80px;
+  /* background-color: rgba(63, 165, 255, 0.5); */
+
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid #e5e5e5;
+}
+.lee_title .wrap {
+  width: 65%;
+  height: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  /* background-color: red; */
+}
+
+.lee_title .wrap .logo {
+}
+.lee_title .wrap .logo a {
+}
+.lee_title .wrap .logo a img {
+  height: 60px;
+}
+.lee_title .search_box {
+  display: flex;
+  margin: 0 auto;
+  height: 30px;
+  width: 60%;
+  /* background-color: blue; */
+  justify-content: center;
+}
+.lee_title .search_box .search img {
+  width: 30px;
+  margin-right: 10px;
+}
+.lee_title .search_box input {
+  width: 300px;
+  border: 1px solid #000;
+  background-color: transparent;
+  border-radius: 30px;
+}
+
+/* 햄버거 아이콘 설정 */
+.lee_title .wrap .menu_icon {
+  position: fixed;
+  top: 15px;
+  right: 25px;
+}
+.lee_title .wrap .menu_icon button {
+  border: none;
+  background-color: transparent;
+  font-size: 40px;
+  cursor: pointer;
+}
+.lee_title .wrap .menu {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translateX(100%);
+}
+.lee_title .wrap .menu.active {
+  transform: translateX(0%);
+  transition: transform 0.5s;
+  z-index: 2;
+}
+.lee_title .wrap .menu .close {
+  position: absolute;
+  top: 10px;
+  font-size: 30px;
+  transform: rotate(45deg);
+  color: #bbb;
+  cursor: pointer;
+}
+.lee_title .wrap .menu .close:hover {
+  color: #fff;
+}
+.lee_title .wrap .menu ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  gap: 30px;
+}
+.lee_title .wrap .menu ul li {
+  text-align: center;
+  font-size: 20px;
+}
+.lee_title .wrap .menu ul li a {
+  color: #bbb;
+  opacity: 0;
+}
+.lee_title .wrap .menu ul li a:hover {
+  color: #fff;
+}
+.lee_title .wrap .menu.active ul li a {
+  opacity: 1;
+  transition: opacity 1.5s;
+  transition-delay: calc(0.5s * var(--i));
+}
+
+/* footer 관련 */
+#footer {
+  font-family: "Ownglyph_Dailyokja-Rg";
+  color: #fff;
+  background-color: #333;
+  height: 200px;
+}
+#footer .address {
+  margin: 0 auto;
+  width: 80%;
+  padding: 20px 0;
+  border-bottom: 1px solid #424242;
+}
+#footer .link {
+  width: 80%;
+  padding-top: 20px;
+  margin: 0 auto;
+}
+#footer .link a {
+  display: flex;
+  justify-content: flex-end;
+  color: #fff;
+}
+#footer .link a p {
+  margin-left: 10px;
+}
